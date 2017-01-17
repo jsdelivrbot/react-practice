@@ -45,7 +45,7 @@ class Board extends React.Component {
   }
 
   renderSquare(i) {
-    return <Square value={this.state.squqres[i]} />;
+    return <Square value={i} />;
   }
   render() {
     const status = 'Next player: X';
