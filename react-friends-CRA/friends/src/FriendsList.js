@@ -29,7 +29,7 @@ class FriendsList extends Component {
             />
 
             <select className="input-medium"
-              onChange={this.}
+              onChange={this.handleChange.bind(this, "orderBy")}
               value={ this.state.orderBy}
             >
                 <option>Name</option>
@@ -37,6 +37,7 @@ class FriendsList extends Component {
             </select>
 
             <select className="input-medium"
+            onChange={this.handleChange.bind(this, "order")}
               value={ this.state.order}
             >
                 <option>Descending</option>
