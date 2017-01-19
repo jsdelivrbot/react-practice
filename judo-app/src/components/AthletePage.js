@@ -6,18 +6,16 @@ import Medal from './Medal';
 import Flag from './Flag';
 import athletes from '../data/athletes';
 
-
-export default class AthletePage extends React.component {
+export default class AthletePage extends React.Component {
   render() {
     const id = this.props.params.id;
-    const athlete = athletes.filter( (athlete) => athlete.id === id)[0];
-    if(!athlete) {
-      return <NotFoundPage/>
+    const athlete = athletes.filter((athlete) => athlete.id === id)[0];
+    if (!athlete) {
+      return <NotFoundPage/>;
     }
-     const headerStyle = { backgroundImage: `url(/img/${athlete.cover})` };
-
-     return (
-       <div className="athlete-full">
+    const headerStyle = { backgroundImage: `url(/img/${athlete.cover})` };
+    return (
+      <div className="athlete-full">
         <AthletesMenu/>
         <div className="athlete">
           <header style={headerStyle}/>
@@ -40,7 +38,6 @@ export default class AthletePage extends React.component {
           <Link to="/">« Back to the index</Link>
         </div>
       </div>
-     )
-
+    );
   }
 }
