@@ -7,7 +7,7 @@ const typeMap = {
 };
 
 export default class Medal extends React.Component {
-  react() {
+  render() {
     return (
       <li className="medal">
         <span className={`symbol symbol-${this.props.type}`} title={typeMap[this.props.type]}>{this.props.type}</span>

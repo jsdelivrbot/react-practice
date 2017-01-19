@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactlDOM from 'react-dom';
+import ReactDOM from 'react-dom';
 import AppRoutes from './components/AppRoutes';
 
 window.onload = () => {
