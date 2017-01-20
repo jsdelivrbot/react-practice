@@ -31,7 +31,7 @@ document.addEventListener('click', () => {
 });
 
 
-// createStore
+// createStore---
 const createStore = (reducer) => {
   let state;
   let listeners = [];
@@ -50,9 +50,41 @@ const createStore = (reducer) => {
   };
 };
   dispatch({});
-  
+
   return { getState, dispatch, subscribe };
 };
+
+
+// reducer with react dom
+const Counter = ({
+  value,
+  onIncrement,
+  onDecrement
+}) => (
+  <div>
+  <h1>{value}</h1>
+  <button onClick={onIncrement}>+</button>
+  <button onClick={onDecrement}>-</button>
+  </div>
+);
+
+const render = () => {
+  ReactDOM.render(
+    <Counter value={store.getState()}
+      onIncrement={() =>
+        store.dispatch({
+          type: 'INCREMENT'
+        })
+      }
+      onDecrement={() =>
+        store.dispatch({
+          type: 'DECREMENT'
+        })
+      } />
+    document.getElementById('root')
+  );
+}
+
 
 
 
